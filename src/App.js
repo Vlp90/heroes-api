@@ -1,15 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Search from "./components/Search";
 
 function App() {
-
-
-
-
-  
   return (
     <div className="app">
-     <h1>Hello marvel</h1>
+      <div className="app__search">
+        <Search />
+      </div>
     </div>
   );
 }
