@@ -9,32 +9,7 @@ import Home from './Home'
 
 // https://superheroapi.com/api/access-token/character-id/powerstats
 
-// class App extends Component {
-  
 
-  
-
-//   render() {
-//     return (
-//       <div className="app">
-//         <div className="app__search">
-//           <Search />
-//         </div>
-
-//         <Link to="/result">See All Beers</Link>
-
-
-
-
-//         <Switch>
-//         <Route exact path="/" component={Home} />
-//         <Route exact path="/result" component={Result} />
-
-//         </Switch>
-//       </div>
-//     );
-//   }
-// }
 
 class App extends Component {
   render() {
