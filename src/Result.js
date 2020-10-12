@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import API_TOKEN from './keys'
 
 export default class Result extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class Result extends Component {
   componentDidMount() {
     axios
       .get(
-        "https://www.superheroapi.com/api.php/10157575892622108/search/batman"
+        `https://www.superheroapi.com/api.php/10157575892622108/search/batman`
       )
       .then((dbRes) => {
         this.setState({ result: dbRes.data.results });
