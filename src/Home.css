@@ -1,0 +1,15 @@
+.home {
+    background-image: url("https://i.ebayimg.com/images/g/bqsAAOSwKfVXH46i/s-l1600.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .home__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 45vh;
+  }
