@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import API_TOKEN from './keys'
+import Card from "./Card"
 
 export default class Result extends Component {
   constructor(props) {
@@ -27,7 +28,8 @@ export default class Result extends Component {
   render() {
     return (
       <div className="result__container">
-        <h1>Hello</h1>
+
+      <Card />
 
         {this.state.result.map((element, index) => (
           <div className="result__info" key={index}>
