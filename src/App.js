@@ -15,8 +15,8 @@ class App extends Component {
       <div className="app">
         <div className="app__routes">
           <Switch>
-            <Route exact path="/" component={Home} />
             <Route exact path="/result" component={Result} />
+            <Route exact path="/" component={Home}/>
            
 
             {/* <Route path="/random" component={RandomBeer} />

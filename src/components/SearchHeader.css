@@ -2,6 +2,11 @@
     width: 100%;
 }
 
+.searchHeader__home {
+    color: rgb(82, 95, 107);
+    padding-right: 10px ;
+}
+
 
 .searchHeader__form {
     display: flex;
