@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import API_TOKEN from './keys'
-import Card from "./Card"
+import API_TOKEN from "./keys";
+import Card from "./Card";
+import "./Result.css"
 
 export default class Result extends Component {
   constructor(props) {
@@ -27,16 +28,18 @@ export default class Result extends Component {
 
   render() {
     return (
-      <div className="result__container">
-
-      <Card />
-
-        {this.state.result.map((element, index) => (
+      <div className="result">
+        <div className="result__card">
+          {this.state.result.map((element, index) => (
+            <Card image={element.image.url} name={element.name} />
+          ))}
+        </div>
+        {/* {this.state.result.map((element, index) => (
           <div className="result__info" key={index}>
             <h1>{element.name}</h1>
-            <img src={element.image.url} alt=""/>
+            <img src={element.image.url} alt="" />
           </div>
-        ))}
+        ))} */}
       </div>
     );
   }
