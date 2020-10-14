@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import API_TOKEN from "./keys";
 import Card from "./Card";
-import "./Result.css"
-
+import "./Result.css";
+import Header from "./Header";
 export default class Result extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ export default class Result extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://www.superheroapi.com/api.php/10157575892622108/search/batman`
+        `https://www.superheroapi.com/api.php/10157575892622108/search/ind`
       )
       .then((dbRes) => {
         this.setState({ result: dbRes.data.results });
@@ -28,19 +28,25 @@ export default class Result extends Component {
 
   render() {
     return (
-      <div className="result">
-        <div className="result__card">
-          {this.state.result.map((element, index) => (
-            <Card image={element.image.url} name={element.name} />
-          ))}
-        </div>
-        {/* {this.state.result.map((element, index) => (
+      <>
+        <Header />
+
+        <div className="result">
+
+        <h1>Result(s)</h1>
+          <div className="result__card">
+            {this.state.result.map((element, index) => (
+              <Card image={element.image.url} name={element.name} />
+            ))}
+          </div>
+          {/* {this.state.result.map((element, index) => (
           <div className="result__info" key={index}>
             <h1>{element.name}</h1>
             <img src={element.image.url} alt="" />
           </div>
         ))} */}
-      </div>
+        </div>
+      </>
     );
   }
 }

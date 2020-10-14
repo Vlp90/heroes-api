@@ -1,5 +1,16 @@
+.result {
+    max-width: 1200px;
+  margin: 0 auto;
+}
+
+.result > h1 {
+    padding: 20px 10px;
+}
+
 .result__card {
     display: flex;
     align-items: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
+    /* justify-content: start; */
 }
+
