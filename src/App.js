@@ -7,6 +7,7 @@ import Result from "./Result.js";
 import { render } from "@testing-library/react";
 import Home from "./Home";
 import Header from "./Header.js";
+import ResultID from './ResultID'
 // https://superheroapi.com/api/access-token/character-id/powerstats
 
 class App extends Component {
@@ -16,7 +17,9 @@ class App extends Component {
         <div className="app__routes">
           <Switch>
             <Route exact path="/result" component={Result} />
+            <Route exact path="/:id" component={ResultID}/>
             <Route exact path="/" component={Home}/>
+
            
 
             {/* <Route path="/random" component={RandomBeer} />

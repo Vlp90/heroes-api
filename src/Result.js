@@ -4,6 +4,7 @@ import API_TOKEN from "./keys";
 import Card from "./Card";
 import "./Result.css";
 import Header from "./Header";
+import { Link } from "react-router-dom";
 export default class Result extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +37,9 @@ export default class Result extends Component {
         <h1>Result(s)</h1>
           <div className="result__card">
             {this.state.result.map((element, index) => (
+              <Link to='/:id'>
               <Card image={element.image.url} name={element.name} />
+              </Link>
             ))}
           </div>
           {/* {this.state.result.map((element, index) => (
