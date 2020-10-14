@@ -1,0 +1,15 @@
+.header {
+    height: 60px;
+    background-color: lightslategray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__container {
+    max-width: 1200px;
+    /* display: flex;
+    flex-direction: column; */
+    width: 100%;
+    margin: 0 20px;
+}
