@@ -5,14 +5,15 @@ import Card from "./Card";
 import "./Result.css";
 import Header from "./Header";
 import { Link } from "react-router-dom";
-import useSearch from "../useSearch";
+import useSearch from "./useSearch";
+import { useStateValue } from "./StateProvider";
+
 
 
 
  function Result()  {
 
   const [{ term }, dispatch] = useStateValue();
-
   const { data } = useSearch(term);
 
   console.log(data);
