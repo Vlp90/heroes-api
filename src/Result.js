@@ -5,10 +5,19 @@ import Card from "./Card";
 import "./Result.css";
 import Header from "./Header";
 import { Link } from "react-router-dom";
+import useSearch from "../useSearch";
 
 
 
-export default class Result extends Component {
+ function Result()  {
+
+  const [{ term }, dispatch] = useStateValue();
+
+  const { data } = useSearch(term);
+
+  console.log(data);
+
+
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -30,7 +39,7 @@ export default class Result extends Component {
   //     });
   // }
 
-  render() {
+
     return (
       <>
         <Header />
@@ -54,5 +63,7 @@ export default class Result extends Component {
         </div>
       </>
     );
-  }
+  
 }
+
+export default Result
