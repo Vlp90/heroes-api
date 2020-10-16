@@ -6,14 +6,17 @@ import { Link } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 
 function SearchHeader() {
+
+
+
+  
   return (
     <div className="searchHeader">
       <form className="searchHeader__form" action="">
-     
-          <Link to="/">
-            <HomeIcon className="searchHeader__home" />
-          </Link>
-        
+        <Link to="/">
+          <HomeIcon className="searchHeader__home" />
+        </Link>
+
         <div className="searchHeader__input">
           <SearchIcon
             // onClick={search}
