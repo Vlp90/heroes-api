@@ -14,6 +14,7 @@ function useSearch(term) {
         .then((result) => {
           setData(result);
           console.log("RESULT",result)
+          
         });
     };
 
