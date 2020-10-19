@@ -12,7 +12,11 @@ function Result() {
   const [{ term }, dispatch] = useStateValue();
   const { data } = useSearch(term);
 
-  console.log("DATA", data);
+  if (term != null) {
+    console.log("DATA", data);
+    console.log("DATA", data.results);
+    console.log("TERM", term);
+  }
 
   return (
     <>
@@ -21,25 +25,41 @@ function Result() {
       <div className="result">
         <h1>Result(s)</h1>
         <div className="result__card">
+          {/* {term && ( */}
+              {data?.response === "success" && (
+            <div>
+              <h1>{data?.response}</h1>
 
-{/* 
+              {data.results.map((item) => (
+                <h1>{item.name}</h1>
+              ))}
+            </div>
+              )}
+          {/* )} */}
+
+          {/* {data?.results.map((item) => ( 
+   <h1>{item.name}</h1>
+   } */}
+          {/* <h1>{data}</h1> */}
+
+          {/* {data?.results.map((item) => ( 
+   <h1>{item.name}</h1>
+   ))} */}
+          {/* 
  {data.results.map((item) => ( 
    <h1>{item.name}</h1>
    )}; */}
-  
-   {/* {term && (
+
+          {/* {term && (
    {data.response}
    )} */}
-{term && (
+          {/* {term && (
    <h1>{data?.response}</h1>
    {data.results.map((el) => (
      <h1>{el.name}</h1>
-   ))}
+   ))} */}
 
-)}
-
-
-
+          {/* )} */}
         </div>
 
         {/* {this.state.result.map((element, index) => (
