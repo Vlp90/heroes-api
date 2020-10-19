@@ -19,3 +19,8 @@
     color: black;
 }
 
+.result__info {
+    display: flex;
+    flex-wrap: wrap;
+}
+

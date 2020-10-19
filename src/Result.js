@@ -25,41 +25,15 @@ function Result() {
       <div className="result">
         <h1>Result(s)</h1>
         <div className="result__card">
-          {/* {term && ( */}
-              {data?.response === "success" && (
-            <div>
-              <h1>{data?.response}</h1>
-
+          {data?.response === "success" && (
+            <div className="result__info">
               {data.results.map((item) => (
-                <h1>{item.name}</h1>
+                <>
+                  <Card name={item.name} image={item.image.url} />
+                </>
               ))}
             </div>
-              )}
-          {/* )} */}
-
-          {/* {data?.results.map((item) => ( 
-   <h1>{item.name}</h1>
-   } */}
-          {/* <h1>{data}</h1> */}
-
-          {/* {data?.results.map((item) => ( 
-   <h1>{item.name}</h1>
-   ))} */}
-          {/* 
- {data.results.map((item) => ( 
-   <h1>{item.name}</h1>
-   )}; */}
-
-          {/* {term && (
-   {data.response}
-   )} */}
-          {/* {term && (
-   <h1>{data?.response}</h1>
-   {data.results.map((el) => (
-     <h1>{el.name}</h1>
-   ))} */}
-
-          {/* )} */}
+          )}
         </div>
 
         {/* {this.state.result.map((element, index) => (
