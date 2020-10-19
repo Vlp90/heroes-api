@@ -24,7 +24,7 @@ width: 220px;
     font-size: 18px;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
     .card {
         width: 30%;
     }
@@ -41,4 +41,4 @@ width: 220px;
     .card {
         width: 100%;
     }
-}
+} */
