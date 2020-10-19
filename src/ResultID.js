@@ -4,33 +4,34 @@ import { useStateValue } from "./StateProvider";
 import useSearch from "./useSearch";
 import { useState, useEffect } from "react";
 import API_TOKEN from "./keys";
+import useID from './useID'
+import {data} from './Result.js'
 
+function ResultID() {
 
-function ResultID(term) {
+  const [{ id }, dispatch] = useStateValue();
 
-  // const [{ term }, dispatch] = useStateValue();
-  // const { data } = useSearch(term);
-
-  const [data, setData] = useState(null);
+  const { data } = useID(id);
+  console.log("hello", data)
 
   // https://www.superheroapi.com/api.php/10157575892622108/63
 
 
-  useEffect(() => {
-      const fetchData = async () => {
-        fetch(
-          `https://www.superheroapi.com/api.php/${API_TOKEN}/63`
-          )
-          .then((response) => response.json())
-          .then((result) => {
-            setData(result);
-            console.log("RESULT ID",result)
+  // useEffect(() => {
+  //     const fetchData = async () => {
+  //       fetch(
+  //         `https://www.superheroapi.com/api.php/${API_TOKEN}/63`
+  //         )
+  //         .then((response) => response.json())
+  //         .then((result) => {
+  //           setData(result);
+  //           console.log("RESULT ID",result)
             
-          });
-      };
+  //         });
+  //     };
   
-      fetchData();
-    }, [term]);
+  //     fetchData();
+  //   }, [term]);
   
   //   return { data };
   // }
