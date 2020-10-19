@@ -1,6 +1,7 @@
 import React from 'react'
 import './Home.css'
 import Search from "./components/Search";
+import SearchHeader from "./components/SearchHeader";
 
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
         <div className='home'>
             <div className="home__search">
           <Search />
+          {/* <SearchHeader /> */}
         </div>
         </div>
     )
