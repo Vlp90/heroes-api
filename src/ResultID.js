@@ -5,14 +5,18 @@ import useSearch from "./useSearch";
 import { useState, useEffect } from "react";
 import API_TOKEN from "./keys";
 import useID from './useID'
-import {data} from './Result.js'
+
+// import {dispatch} from './Result.js'
 
 function ResultID() {
 
-  const [{ id }, dispatch] = useStateValue();
+// console.log('YOUPIII',{dispatch})
 
+  // const [{ id }, dispatch] = useStateValue();
+
+  const [{ id }, dispatch] = useStateValue();
   const { data } = useID(id);
-  console.log("hello", data)
+  console.log("hello DATA ID", data)
 
   // https://www.superheroapi.com/api.php/10157575892622108/63
 
@@ -40,8 +44,8 @@ function ResultID() {
   return (
     <div>
       <h1>Result ID</h1>
-      {data?.id}
-      {data?.name}
+      {/* {data?.id}
+      {data?.name} */}
     </div>
   );
 }

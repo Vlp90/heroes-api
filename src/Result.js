@@ -15,7 +15,7 @@ function Result() {
   const [{ term }, dispatch] = useStateValue();
   const { data } = useSearch(term);
   const history = useHistory();
-  const [CardId, setCardId] = useState("");
+  // const [CardId, setCardId] = useState("");
 
 
   // if (term != null) {
@@ -28,7 +28,7 @@ function Result() {
     e.preventDefault();
     // console.log("EVENT TARGET", e.target.id);
     console.log("CURRENT TARGET", e.currentTarget.id);
-
+    const idCard = e.currentTarget.id
     // const id = e.currentTarget.id
 
     // const all = e.target;
@@ -42,30 +42,33 @@ function Result() {
     // console.log("DATA FOR ID",result)
     // console.log(data.results);
     // console.log("hitten");
-    // history.push("/result-id");
+    history.push("/result-id");
 
-    const fetchData = async () => {
-      const id = e.currentTarget.id
-      // const dataID = data.id
-      fetch(`https://www.superheroapi.com/api.php/${API_TOKEN}/${id}`)
-        .then((response) => response.json())
-        .then((result) => {
-          history.push("/result-id");
-          // setData(result);
-          console.log("RESULT", result);
-        });
-      };
-      fetchData();
-      // console.log(data)
-      return { data };
+    dispatch({
+    type: actionTypes.SET_FIND_ID,
+    id: idCard,
+  });
+
+    // const fetchData = async () => {
+    //   const idCard = e.currentTarget.id
+    //   // const dataID = data.id
+    //   // fetch(`https://www.superheroapi.com/api.php/${API_TOKEN}/${id}`)
+    //   //   .then((response) => response.json())
+    //   //   .then((result) => {
+    //   //     // history.push("/result-id");
+    //   //     // setData(result);
+    //   //     console.log("RESULT", result);
+    //   //   });
+   
+    //   };
+      // fetchData();
+      // // console.log(data)
+      // return { data };
 
 
 
 
-    // dispatch({
-    //   type: actionTypes.SET_FIND_ID,
-    //   id: CardId,
-    // });
+    
 
     
     // setCardId(data.response)
@@ -81,7 +84,7 @@ function Result() {
           {data?.response === "success" && (
             <div className="result__info">
               {data.results.map((item) => (
-                <div onClick={cardID} id={item.id} >
+                <div onClick={cardID} key={item.id}  id={item.id}>
                   <Card name={item.name} id={item.id} image={item.image.url}  />
                 </div>
               ))}
