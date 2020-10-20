@@ -10,13 +10,18 @@ import { useStateValue } from "./StateProvider";
 import { useHistory } from "react-router-dom";
 import { actionTypes } from "./reducer";
 
-
 function Result() {
-  const [{ term }, dispatch] = useStateValue();
-  const { data } = useSearch(term);
+  const [{ term, id }, dispatch] = useStateValue();
+  // const [valueID, setValueID] = useState("");
+  const [idCard, setIdCard] = useState("");
   const history = useHistory();
-  // const [CardId, setCardId] = useState("");
 
+
+  const { data } = useSearch(term);
+
+  // console.log("FIND DATA HERE BITCH", data)
+
+  // const [CardId, setCardId] = useState("");
 
   // if (term != null) {
   //   console.log("DATA", data);
@@ -27,8 +32,9 @@ function Result() {
   const cardID = (e) => {
     e.preventDefault();
     // console.log("EVENT TARGET", e.target.id);
-    console.log("CURRENT TARGET", e.currentTarget.id);
-    const idCard = e.currentTarget.id
+    
+    const idCard = e.currentTarget.id;
+    console.log("VALUUUUUE", idCard)
     // const id = e.currentTarget.id
 
     // const all = e.target;
@@ -43,11 +49,12 @@ function Result() {
     // console.log(data.results);
     // console.log("hitten");
     history.push("/result-id");
+    console.log("CURRENT TARGET", idCard);
 
     dispatch({
-    type: actionTypes.SET_FIND_ID,
-    id: idCard,
-  });
+      type: actionTypes.SET_FIND_ID,
+      id: idCard,
+    });
 
     // const fetchData = async () => {
     //   const idCard = e.currentTarget.id
@@ -59,18 +66,12 @@ function Result() {
     //   //     // setData(result);
     //   //     console.log("RESULT", result);
     //   //   });
-   
+
     //   };
-      // fetchData();
-      // // console.log(data)
-      // return { data };
+    // fetchData();
+    // // console.log(data)
+    // return { data };
 
-
-
-
-    
-
-    
     // setCardId(data.response)
   };
 
@@ -84,8 +85,8 @@ function Result() {
           {data?.response === "success" && (
             <div className="result__info">
               {data.results.map((item) => (
-                <div onClick={cardID} key={item.id}  id={item.id}>
-                  <Card name={item.name} id={item.id} image={item.image.url}  />
+                <div onClick={cardID} key={item.id} id={item.id} value={idCard}>
+                  <Card name={item.name} id={item.id} image={item.image.url} />
                 </div>
               ))}
             </div>

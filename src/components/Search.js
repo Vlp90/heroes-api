@@ -12,7 +12,7 @@ function Search() {
   const history = useHistory();
 
   const search = (e) => {
-    console.log(e);
+    // console.log(e);
 
     // TO make the button enter working we change the tagg of the div by form
     e.preventDefault();

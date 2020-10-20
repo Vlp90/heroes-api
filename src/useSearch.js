@@ -13,8 +13,8 @@ function useSearch(term) {
         .then((response) => response.json())
         .then((result) => {
           setData(result);
-          console.log("RESULT",result)
-          
+          console.log("RESULT useSearch",result)
+
         });
     };
 
