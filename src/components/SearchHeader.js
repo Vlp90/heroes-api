@@ -22,12 +22,13 @@ function SearchHeader() {
     history.push("/result");
     console.log(input);
 
-    // put the search termn input in the data layer
+    // put the search term input in the data layer
     dispatch({
       type: actionTypes.SET_SEARCH_TERM,
       term: input,
     });
   };
+
 
   return (
     <div className="searchHeader">

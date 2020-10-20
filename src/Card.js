@@ -55,9 +55,9 @@ function Card({ image, name, idNumber }) {
     <div  className="card">
       {/* <img src="https://www.superherodb.com/pictures2/portraits/10/100/10441.jpg" alt=""/>
             <h1>Name</h1> */}
-      <h6>{idNumber}</h6>
       <img src={image} alt="" />
       <h1>{name}</h1>
+      <h6>{idNumber}</h6>
     </div>
     // </NavLink>
   );

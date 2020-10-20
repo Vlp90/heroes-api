@@ -6,73 +6,41 @@ import "./Result.css";
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import useSearch from "./useSearch";
+import useID from "./useSearch";
 import { useStateValue } from "./StateProvider";
 import { useHistory } from "react-router-dom";
 import { actionTypes } from "./reducer";
+import reducer from "./reducer";
 
 function Result() {
   const [{ term, id }, dispatch] = useStateValue();
-  // const [valueID, setValueID] = useState("");
   const [idCard, setIdCard] = useState("");
   const history = useHistory();
 
-
+  // DISPLAY RESULTS FROM TERM
   const { data } = useSearch(term);
 
-  // console.log("FIND DATA HERE BITCH", data)
-
-  // const [CardId, setCardId] = useState("");
-
-  // if (term != null) {
-  //   console.log("DATA", data);
-  //   console.log("DATA", data.results);
-  //   console.log("TERM", term);
-  // }
+  // console.log('BEFORE', idCard)
 
   const cardID = (e) => {
     e.preventDefault();
-    // console.log("EVENT TARGET", e.target.id);
-    
-    const idCard = e.currentTarget.id;
-    console.log("VALUUUUUE", idCard)
-    // const id = e.currentTarget.id
+    const idCardValue = e.currentTarget.id;
 
-    // const all = e.target;
-    // const name = all.name
-    // console.log('DATA VALUE', name)
-    // const idCard = data.results
-
-    // const result = idCard.map((el) => {
-    //   console.log(el.id)
-    // })
-    // console.log("DATA FOR ID",result)
-    // console.log(data.results);
-    // console.log("hitten");
-    history.push("/result-id");
-    console.log("CURRENT TARGET", idCard);
+    // console.log("VALUUUUUE", idCardValue)
+    // history.push("/result-id");
+    console.log("INPUT EQUIV", idCard);
 
     dispatch({
       type: actionTypes.SET_FIND_ID,
-      id: idCard,
+      id: idCardValue,
+      // id: idCard,
     });
 
-    // const fetchData = async () => {
-    //   const idCard = e.currentTarget.id
-    //   // const dataID = data.id
-    //   // fetch(`https://www.superheroapi.com/api.php/${API_TOKEN}/${id}`)
-    //   //   .then((response) => response.json())
-    //   //   .then((result) => {
-    //   //     // history.push("/result-id");
-    //   //     // setData(result);
-    //   //     console.log("RESULT", result);
-    //   //   });
+    // console.log("CURRENT TARGET", idCard);
+  };
 
-    //   };
-    // fetchData();
-    // // console.log(data)
-    // return { data };
-
-    // setCardId(data.response)
+  const handleChange = (e) => {
+    setIdCard(e.currentTarget.id);
   };
 
   return (
@@ -85,8 +53,18 @@ function Result() {
           {data?.response === "success" && (
             <div className="result__info">
               {data.results.map((item) => (
-                <div onClick={cardID} key={item.id} id={item.id} value={idCard}>
-                  <Card name={item.name} id={item.id} image={item.image.url} />
+                <div
+                  key={item.id}
+                  id={item.id}
+                  onClick={cardID}
+                  onChange={handleChange}
+                  value={idCard}
+                >
+                  <Card
+                    value={idCard}
+                    name={item.name}
+                    image={item.image.url}
+                  />
                 </div>
               ))}
             </div>

@@ -20,7 +20,7 @@ function useSearch(term) {
 
     fetchData();
   }, [term]);
-
+    // console.log("VLAD DATA",{data})
   return { data };
 }
 

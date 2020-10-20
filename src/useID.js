@@ -1,29 +1,24 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import API_TOKEN from "./keys";
-import { useStateValue } from "./StateProvider";
-import { useHistory } from "react-router-dom";
-import {actionTypes} from './reducer'
-import cardID from "./Result"
 
 
-const useID = (id) => {
-    // const [{ id }, dispatch] = useStateValue();
-    const [data, setData] = useState(null);
-    // const history = useHistory();
+function useID (id) {
 
-// console.log("RESULT USEID", cardID.dispatch)
-    // https://www.superheroapi.com/api.php/10157575892622108/63
-// console.log("DATA ID HERE", data)
+  const [dataID, setdataID] = useState(null);
+    console.log("ID USEID", id)
+    
+
+
 
     useEffect(() => {
         const fetchData = async () => {
           fetch(
-            `https://www.superheroapi.com/api.php/${API_TOKEN}/73`
+            `https://www.superheroapi.com/api.php/${API_TOKEN}/${id}`
             )
             .then((response) => response.json())
             .then((result) => {
-                setData(result);
+              setdataID(result);
               console.log("RESULT useID",result)
               
             });
@@ -32,8 +27,8 @@ const useID = (id) => {
         fetchData();
       }, [id]);
     
-    //   console.log('USE ID', data)
-      return { data };
+      console.log('USE ID VLAD', {dataID})
+      return { dataID };
     }
 
 
