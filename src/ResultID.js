@@ -18,14 +18,14 @@ function ResultID() {
       <div className="resultID__header">
         <div className="resultID__headerBackground">
             <h3>{dataID?.biography.alignment}</h3>
-            <h3>{dataID?.id}</h3>
+            <h3>#{dataID?.id}</h3>
         </div>
           <div className="resultID__headerProfile">
             <img src={dataID?.image.url} alt="" />
           </div>
+           <h1>{dataID?.name}</h1> 
       </div>
 
-      {dataID?.name}
 
       {/* {Object.keys(dataID?.appearance).map((keyName, i) => (
     <li className="travelcompany-input" key={i}>
