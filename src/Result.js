@@ -17,12 +17,7 @@ function Result() {
   const [idCard, setIdCard] = useState("");
   const history = useHistory();
 
-  console.log('ID KEVIN', id)
-
-  // DISPLAY RESULTS FROM TERM
   const { data } = useSearch(term);
-
-  // console.log('BEFORE', idCard)
 
   const cardID = (e) => {
     e.preventDefault();
@@ -30,15 +25,11 @@ function Result() {
 
     // console.log("VALUUUUUE", idCardValue)
     history.push("/result-id");
-    console.log("INPUT EQUIV", idCard);
 
     dispatch({
       type: actionTypes.SET_FIND_ID,
       id: idCardValue,
-      // id: idCard,
     });
-
-    // console.log("CURRENT TARGET", idCard);
   };
 
   const handleChange = (e) => {
@@ -47,8 +38,6 @@ function Result() {
 
   return (
     <>
-      {/* <Header /> */}
-
       <div className="result">
         <h1>Result(s)</h1>
         <div className="result__card">

@@ -1,46 +1,70 @@
 import React from "react";
 import "./ResultID.css";
 import { useStateValue } from "./StateProvider";
-import useSearch from "./useSearch";
-import { useState, useEffect } from "react";
-import API_TOKEN from "./keys";
-import id from "./useID";
+
 import useID from "./useID";
-// import idCard from './Result'
-// import {id} from "./useID"
-import { useHistory } from "react-router-dom";
-import Result from "./Result";
 
-import reducer from './reducer'
 
-// import {dispatch} from './Result.js'
 
 function ResultID() {
 
   // console.log('REDUCER', reducer.action.id)
   const [{ term, id }, dispatch] = useStateValue();
-  console.log('TERM', term)
-  console.log('ID FINAL PLZZZZZZZZZ', id)
+  // console.log('TERM', term)
+  // console.log('ID FINAL PLZZZZZZZZZ', id)
 
-  // console.log("DISPATCH", actionTypes.id)
-  // const [idCard, setIdCard] = useState();
-
-  // const [{ id, term }, dispatch] = useStateValue();
-  
-  // console.log("AFTER", term);
-  // console.log("AFTER", id);
-  
-// let id = 78
 
   // const { dataID } = useID(id);
+  const { dataID } = useID(id);
 
 
   return (
-    <div>
-      <h1>Result ID</h1>
-      {/* {dataID.id}
-      {dataID.name}
-      <img src="https://www.superherodb.com/pictures2/portraits/10/100/10546.jpg" alt="" /> */}
+    <div className='resultID'>
+      {dataID?.name}
+      {dataID?.id}
+
+  
+      <img src= {dataID?.image.url} alt="" />
+
+{/* {Object.keys(dataID?.appearance).map((keyName, i) => (
+    <li className="travelcompany-input" key={i}>
+        <span className="input-label">key: {i} Name: {dataID?.appearance[keyName]}</span>
+    </li>
+))} */}
+<h2>Appearance</h2>
+<h3>{dataID?.appearance.["eye-color"]}</h3>
+<h3>{dataID?.appearance.gender}</h3>
+<h3>{dataID?.appearance.["hair-color"]}</h3>
+<h3>{dataID?.appearance.race}</h3>
+<h3>{dataID?.appearance.height[1]}</h3>
+<h3>{dataID?.appearance.weight[1]}</h3>
+
+<h2>Biography</h2>
+<h3>{dataID?.biography.["full-name"]}</h3>
+<h3>{dataID?.biography.alignment}</h3>
+<h3>{dataID?.biography.["alter-egos"]}</h3>
+<h3>{dataID?.biography.["first-appearance"]}</h3>
+<h3>{dataID?.biography.["place-of-birth"]}</h3>
+<h3>{dataID?.biography.publisher}</h3>
+
+
+<h2>Connection</h2>
+<h3>{dataID?.connections.["group-affiliation"]}</h3>
+<h3>{dataID?.connections.relatives}</h3>
+
+<h2>Powerstats</h2>
+<h3>{dataID?.powerstats.combat}</h3>
+<h3>{dataID?.powerstats.durability}</h3>
+<h3>{dataID?.powerstats.intelligence}</h3>
+<h3>{dataID?.powerstats.power}</h3>
+<h3>{dataID?.powerstats.speed}</h3>
+<h3>{dataID?.powerstats.strength}</h3>
+
+<h2>Work</h2>
+<h3>{dataID?.work.base}</h3>
+<h3>{dataID?.work.occupation}</h3>
+
+
     </div>
   );
 }

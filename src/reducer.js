@@ -16,13 +16,14 @@ export const initialState = {
     switch (action.type) {
 
       case actionTypes.SET_SEARCH_TERM:
+        // console.log("ACTION SEARCH", action.term)
         return {
           ...state,
           term: action.term,
         };
 
         case actionTypes.SET_FIND_ID:
-          // console.log("ACTION KEVIN", action.id)
+          // console.log("ACTION ID", action.id)
             return {
               ...state,
               id: action.id,

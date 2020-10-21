@@ -6,7 +6,7 @@ import API_TOKEN from "./keys";
 function useID (id) {
 
   const [dataID, setdataID] = useState(null);
-    console.log("ID USEID", id)
+    // console.log("ID USEID", id)
     
 
 
@@ -27,7 +27,7 @@ function useID (id) {
         fetchData();
       }, [id]);
     
-      console.log('USE ID VLAD', {dataID})
+      // console.log('USE ID VLAD', {dataID})
       return { dataID };
     }
 
