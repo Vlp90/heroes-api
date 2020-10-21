@@ -20,7 +20,7 @@ function ResultID() {
   // console.log('REDUCER', reducer.action.id)
   const [{ term, id }, dispatch] = useStateValue();
   console.log('TERM', term)
-  console.log('ID', id)
+  console.log('ID FINAL PLZZZZZZZZZ', id)
 
   // console.log("DISPATCH", actionTypes.id)
   // const [idCard, setIdCard] = useState();

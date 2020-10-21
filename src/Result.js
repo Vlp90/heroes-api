@@ -17,6 +17,8 @@ function Result() {
   const [idCard, setIdCard] = useState("");
   const history = useHistory();
 
+  console.log('ID KEVIN', id)
+
   // DISPLAY RESULTS FROM TERM
   const { data } = useSearch(term);
 
@@ -27,7 +29,7 @@ function Result() {
     const idCardValue = e.currentTarget.id;
 
     // console.log("VALUUUUUE", idCardValue)
-    // history.push("/result-id");
+    history.push("/result-id");
     console.log("INPUT EQUIV", idCard);
 
     dispatch({

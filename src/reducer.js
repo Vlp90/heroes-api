@@ -22,9 +22,10 @@ export const initialState = {
         };
 
         case actionTypes.SET_FIND_ID:
+          // console.log("ACTION KEVIN", action.id)
             return {
               ...state,
-              id: action.results,
+              id: action.id,
             };
   
       default:
