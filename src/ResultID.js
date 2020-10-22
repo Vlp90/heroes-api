@@ -32,13 +32,37 @@ function ResultID() {
         <span className="input-label">key: {i} Name: {dataID?.appearance[keyName]}</span>
     </li>
 ))} */}
-      <h2>Appearance</h2>
+
+<div className="resultID__info">
+  <div className="resultID__infoLeft">
+  <h2>Appearance</h2>
       <h3>{dataID?.appearance["eye-color"]}</h3>
       <h3>{dataID?.appearance.gender}</h3>
       <h3>{dataID?.appearance["hair-color"]}</h3>
       <h3>{dataID?.appearance.race}</h3>
       <h3>{dataID?.appearance.height[1]}</h3>
       <h3>{dataID?.appearance.weight[1]}</h3>
+
+  </div>
+
+  <div className="resultID__infoRight">
+  <h2>Powerstats</h2>
+      <h3>{dataID?.powerstats.combat}</h3>
+      <h3>{dataID?.powerstats.durability}</h3>
+      <h3>{dataID?.powerstats.intelligence}</h3>
+      <h3>{dataID?.powerstats.power}</h3>
+      <h3>{dataID?.powerstats.speed}</h3>
+      <h3>{dataID?.powerstats.strength}</h3>
+
+    </div>
+</div>
+      {/* <h2>Appearance</h2>
+      <h3>{dataID?.appearance["eye-color"]}</h3>
+      <h3>{dataID?.appearance.gender}</h3>
+      <h3>{dataID?.appearance["hair-color"]}</h3>
+      <h3>{dataID?.appearance.race}</h3>
+      <h3>{dataID?.appearance.height[1]}</h3>
+      <h3>{dataID?.appearance.weight[1]}</h3> */}
 
       <h2>Biography</h2>
       <h3>{dataID?.biography["full-name"]}</h3>
@@ -51,13 +75,6 @@ function ResultID() {
       <h3>{dataID?.connections["group-affiliation"]}</h3>
       <h3>{dataID?.connections.relatives}</h3>
 
-      <h2>Powerstats</h2>
-      <h3>{dataID?.powerstats.combat}</h3>
-      <h3>{dataID?.powerstats.durability}</h3>
-      <h3>{dataID?.powerstats.intelligence}</h3>
-      <h3>{dataID?.powerstats.power}</h3>
-      <h3>{dataID?.powerstats.speed}</h3>
-      <h3>{dataID?.powerstats.strength}</h3>
 
       <h2>Work</h2>
       <h3>{dataID?.work.base}</h3>

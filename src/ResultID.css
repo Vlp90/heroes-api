@@ -45,3 +45,19 @@ margin-top: -130px;
     justify-content: space-between; */
     margin: 0 20px 20px 20px;
 }
+
+.resultID__info {
+    display: flex;
+    justify-content: center;
+}
+
+.resultID__infoLeft {
+    border: 1px solid lightgray;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.resultID__infoRight {
+    border: 1px solid lightgray;
+    padding: 20px;
+}
