@@ -2,7 +2,7 @@
     margin: 10px;
 padding-bottom: 5px;
 /* border:1px solid lightgray; */
-box-shadow:0 2px 14px rgba(126, 87, 88, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08); ;
+box-shadow:0 0.747159px 1.4113px rgba(135,165,217,.0224916), 0 1.79553px 3.39155px rgba(135,165,217,.0323114), 0 3.38082px 6.38599px rgba(135,165,217,.04), 0 6.0308px 11.3915px rgba(135,165,217,.0476886), 0 11.28px 21.3066px rgba(135,165,217,.0575083);
 border-radius: 10px;
 width: 220px;
 }
