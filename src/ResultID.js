@@ -6,11 +6,11 @@ import { Container, Grid } from "@material-ui/core";
 
 // ICONS
 import FaceIcon from "@material-ui/icons/Face";
-import AccessibilityIcon from '@material-ui/icons/Accessibility';
-import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
-import WcIcon from '@material-ui/icons/Wc';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import PublicIcon from '@material-ui/icons/Public';
+import AccessibilityIcon from "@material-ui/icons/Accessibility";
+import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
+import WcIcon from "@material-ui/icons/Wc";
+import VisibilityIcon from "@material-ui/icons/Visibility";
+import PublicIcon from "@material-ui/icons/Public";
 // ----------------------------------------
 
 function ResultID() {
@@ -20,15 +20,39 @@ function ResultID() {
   // console.log('ID FINAL PLZZZZZZZZZ', id)
 
   // const { dataID } = useID(id);
-  const { dataID } = useID(105);
+  const { dataID } = useID(id);
 
+  //   if (dataID?.biography.publisher ==="") {
+  // }
   return (
     <div className="resultID">
       <div className="resultID__header">
-        <div className="resultID__headerBackground">
-          <h3>{dataID?.biography.alignment}</h3>
-          <h3>#{dataID?.id}</h3>
-        </div>
+        {dataID?.biography.publisher == "DC Comics" ? (
+          <div
+            style={{
+              backgroundImage:
+                "url(https://picstatio.com/large/xj5hox/dc-comics-logo.jpg)",
+              backgroundSize: "cover", backgroundPosition: "center"
+            }}
+            className="resultID__headerBackground"
+          >
+            <h3>{dataID?.biography.alignment}</h3>
+            <h3>#{dataID?.id}</h3>
+          </div>
+        ) : (
+          <div
+            style={{
+              backgroundImage:
+                "url(https://www.bcslogic.com/wp-content/uploads/2019/05/5.8.19.wild_.esther.feature2-1120x450.png)",
+              backgroundSize: "cover", backgroundPosition: "center"
+            }}
+            className="resultID__headerBackground"
+          >
+            <h3>{dataID?.biography.alignment}</h3>
+            <h3>#{dataID?.id}</h3>
+          </div>
+        )}
+
         <div className="resultID__headerProfile">
           <img src={dataID?.image.url} alt="" />
         </div>
@@ -55,34 +79,34 @@ function ResultID() {
               </div>
             </Grid>
             <Grid item xs={6} sm={4}>
-            <div>
-            <AccessibilityIcon />
-              <h3>{dataID?.appearance.height[1]}</h3>
-            </div>
+              <div>
+                <AccessibilityIcon />
+                <h3>{dataID?.appearance.height[1]}</h3>
+              </div>
             </Grid>
             <Grid item xs={6} sm={4}>
-            <div>
-            <FitnessCenterIcon />
-              <h3>{dataID?.appearance.weight[1]}</h3>
-            </div>
+              <div>
+                <FitnessCenterIcon />
+                <h3>{dataID?.appearance.weight[1]}</h3>
+              </div>
             </Grid>
             <Grid item xs={6} sm={4}>
-            <div>
-            <WcIcon />
-              <h3>{dataID?.appearance.gender}</h3>
-            </div>
+              <div>
+                <WcIcon />
+                <h3>{dataID?.appearance.gender}</h3>
+              </div>
             </Grid>
             <Grid item xs={6} sm={4}>
-            <div>
-            <VisibilityIcon />
-              <h3>{dataID?.appearance["eye-color"]}</h3>
-            </div>
+              <div>
+                <VisibilityIcon />
+                <h3>{dataID?.appearance["eye-color"]}</h3>
+              </div>
             </Grid>
             <Grid item xs={6} sm={4}>
-            <div>
-            <FaceIcon />
-              <h3>{dataID?.appearance["hair-color"]}</h3>
-            </div>
+              <div>
+                <FaceIcon />
+                <h3>{dataID?.appearance["hair-color"]}</h3>
+              </div>
             </Grid>
           </Grid>
         </div>
@@ -94,6 +118,7 @@ function ResultID() {
           <h3>{dataID?.powerstats.power}</h3>
           <h3>{dataID?.powerstats.speed}</h3>
           <h3>{dataID?.powerstats.strength}</h3>
+          <h3>{dataID?.biography.publisher}</h3>
         </div>
       </div>
 
@@ -104,8 +129,8 @@ function ResultID() {
       <h3>{dataID?.appearance.race}</h3>
       <h3>{dataID?.appearance.height[1]}</h3>
       <h3>{dataID?.appearance.weight[1]}</h3> */}
-      {/* 
-      <h2>Biography</h2>
+
+      {/* <h2>Biography</h2>
       <h3>{dataID?.biography["alter-egos"]}</h3>
       <h3>{dataID?.biography["first-appearance"]}</h3>
       <h3>{dataID?.biography["place-of-birth"]}</h3>
@@ -117,7 +142,7 @@ function ResultID() {
 
       <h2>Work</h2>
       <h3>{dataID?.work.base}</h3>
-      <h3>{dataID?.work.occupation}</h3> */}
+      <h3>{dataID?.work.occupation}</h3>  */}
     </div>
   );
 }
