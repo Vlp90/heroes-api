@@ -76,3 +76,18 @@ padding: 20px;
 .resultID__powerStats {
     margin-top: 50px;
 }
+
+.resultID__appearanceInfo div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.resultID__appearanceInfo div svg {
+    color: lightslategray;
+}
+
+.resultID__appearanceInfo div h3 {
+    padding-left: 10px;
+}

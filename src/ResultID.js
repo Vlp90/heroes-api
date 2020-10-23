@@ -1,10 +1,17 @@
 import React from "react";
 import "./ResultID.css";
 import { useStateValue } from "./StateProvider";
-import FaceIcon from "@material-ui/icons/Face";
-
 import useID from "./useID";
 import { Container, Grid } from "@material-ui/core";
+
+// ICONS
+import FaceIcon from "@material-ui/icons/Face";
+import AccessibilityIcon from '@material-ui/icons/Accessibility';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import WcIcon from '@material-ui/icons/Wc';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import PublicIcon from '@material-ui/icons/Public';
+// ----------------------------------------
 
 function ResultID() {
   // console.log('REDUCER', reducer.action.id)
@@ -42,22 +49,40 @@ function ResultID() {
         <div className="resultID__appearanceInfo">
           <Grid container spacing={3}>
             <Grid item xs={6} sm={4}>
-              <h3>{dataID?.appearance.race}</h3>{" "}
+              <div>
+                <PublicIcon />
+                <h3> {dataID?.appearance.race}</h3>{" "}
+              </div>
             </Grid>
             <Grid item xs={6} sm={4}>
+            <div>
+            <AccessibilityIcon />
               <h3>{dataID?.appearance.height[1]}</h3>
+            </div>
             </Grid>
             <Grid item xs={6} sm={4}>
+            <div>
+            <FitnessCenterIcon />
               <h3>{dataID?.appearance.weight[1]}</h3>
+            </div>
             </Grid>
             <Grid item xs={6} sm={4}>
+            <div>
+            <WcIcon />
               <h3>{dataID?.appearance.gender}</h3>
+            </div>
             </Grid>
             <Grid item xs={6} sm={4}>
+            <div>
+            <VisibilityIcon />
               <h3>{dataID?.appearance["eye-color"]}</h3>
+            </div>
             </Grid>
             <Grid item xs={6} sm={4}>
+            <div>
+            <FaceIcon />
               <h3>{dataID?.appearance["hair-color"]}</h3>
+            </div>
             </Grid>
           </Grid>
         </div>
