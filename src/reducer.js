@@ -5,7 +5,8 @@ export const initialState = {
   
   export const actionTypes = {
     SET_SEARCH_TERM: "SET_SEARCH_TERM",
-    SET_FIND_ID: "SET_FIND_ID"
+    SET_FIND_ID: "SET_FIND_ID",
+    SET_FIND_RANDOM_ID: "SET_FIND_RANDOM_ID"
   };
   
   const reducer = (state, action) => {
@@ -23,12 +24,23 @@ export const initialState = {
         };
 
         case actionTypes.SET_FIND_ID:
-          // console.log("ACTION ID", action.id)
+          console.log("ACTION ID", action.id)
             return {
               ...state,
               id: action.id,
             };
   
+            case actionTypes.SET_FIND_RANDOM_ID:
+              console.log("ACTION RANOM", action.id)
+
+              const randomInteger = (min, max) => {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+              }
+                return {
+                  ...state,
+                  id: action.id,
+                };
+
       default:
         return state;
     }

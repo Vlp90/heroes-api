@@ -4,6 +4,7 @@ import Home from "./Home";
 import Header from './Header'
 import Result from "./Result";
 import ResultID from './ResultID'
+import Random from './Random'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,11 @@ function App() {
           <Route path="/result-id">
           <Header />
             <ResultID />
+          </Route>
+
+          <Route path="/random-id">
+          <Header />
+            <Random />
           </Route>
 
           <Route path="/">

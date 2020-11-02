@@ -9,7 +9,7 @@ import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
 
 function SearchHeader() {
-  const [{ term }, dispatch] = useStateValue("");
+  const [{ term, id }, dispatch] = useStateValue("");
   const [input, setInput] = useState("");
   const history = useHistory();
 
@@ -29,6 +29,19 @@ function SearchHeader() {
     });
   };
 
+  const searchRandom = (e) => {
+    const randomInteger = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
+    console.log(randomInteger(1, 700))
+    // history.push("/random-id");
+
+    dispatch({
+      type: actionTypes.SET_FIND_RANDOM_ID,
+      id: randomInteger(1, 700),
+    });
+  };
 
   return (
     <div className="searchHeader">
@@ -63,7 +76,10 @@ function SearchHeader() {
         </div>
         <div className="searchHeader__random">
           <h1>or</h1>
-          <Button>Random</Button>
+
+          <Button type="submit" onSubmit={searchRandom} onClick={searchRandom}>
+            Random
+          </Button>
         </div>
       </form>
     </div>
