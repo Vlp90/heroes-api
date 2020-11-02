@@ -3,6 +3,8 @@ import "./ResultID.css";
 import { useStateValue } from "./StateProvider";
 import useID from "./useID";
 import { Container, Grid } from "@material-ui/core";
+import { Doughnut } from 'react-chartjs-2';
+
 
 // ICONS
 import FaceIcon from "@material-ui/icons/Face";
@@ -20,7 +22,7 @@ function ResultID() {
   // console.log('ID FINAL PLZZZZZZZZZ', id)
 
   // const { dataID } = useID(id);
-  const { dataID } = useID(id);
+  const { dataID } = useID(623);
 
   //   if (dataID?.biography.publisher ==="") {
   // }
@@ -112,6 +114,8 @@ function ResultID() {
         </div>
         <div className="resultID__powerStats">
           <h2>Powerstats</h2>
+
+          <Doughnut />
           <h3>{dataID?.powerstats.combat}</h3>
           <h3>{dataID?.powerstats.durability}</h3>
           <h3>{dataID?.powerstats.intelligence}</h3>
