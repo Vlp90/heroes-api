@@ -7,7 +7,7 @@ import useID from "../useID";
 
 function RadarComponent() {
   const [{ term, id }, dispatch] = useStateValue();
-  const { dataID } = useID(10);
+  const { dataID } = useID(id);
 
   const radarData = {
     labels: ['Combat', 'Durability', 'Intelligence', 'Power', 'Speed', 'Strength'],

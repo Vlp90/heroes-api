@@ -4,8 +4,8 @@ import { useStateValue } from "./StateProvider";
 import useID from "./useID";
 import { Container, Grid } from "@material-ui/core";
 // import RadarComponent from './components/Radar'
-import { Radar } from 'react-chartjs-2';
-import RadarComponent from './components/RadarComponent'
+import { Radar } from "react-chartjs-2";
+import RadarComponent from "./components/RadarComponent";
 
 // ICONS
 import FaceIcon from "@material-ui/icons/Face";
@@ -23,7 +23,12 @@ function ResultID() {
   // console.log('ID FINAL PLZZZZZZZZZ', id)
 
   // const { dataID } = useID(id);
-  const { dataID } = useID(10);
+
+  //DC
+  // const { dataID } = useID(69);
+  //MARVEL
+
+  const { dataID } = useID(id);
 
   // const checkSide = dataID?.biography.alignment
   // console.log(checkSide)
@@ -31,57 +36,72 @@ function ResultID() {
   //   return <h3>GOOOOD</h3>
   // }
 
-  function checkSide(side) {
+  const checkSide = (side) => {
     if (side === "good") {
-      return '👼';
-    } else if (side === "bad"){
-      return '😈';
+      return "👼";
+    } else if (side === "bad") {
+      return "😈";
     } else {
-      return '🤷🏻‍♂️';
+      return "🤷🏻‍♂️";
     }
-  }
+  };
 
+  const checkUnivers = (univers) => {
+    if (univers === "DC Comics") {
+      // return "https://picstatio.com/large/xj5hox/dc-comics-logo.jpg"
+      return (
+        <div
+          style={{
+            backgroundImage:
+              "url(https://images.alphacoders.com/763/763331.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="resultID__headerBackground"
+        >
+          <h3>{checkSide(dataID?.biography.alignment)}</h3>
+          <h3>#{dataID?.id}</h3>
+        </div>
+      );
+    } else if (univers === "Marvel Comics") {
+      // return "https://wallpapercave.com/wp/wp2654364.jpg"
+      return (
+        <div
+          style={{
+            backgroundImage:
+              "url(https://www.bcslogic.com/wp-content/uploads/2019/05/5.8.19.wild_.esther.feature2-1120x450.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="resultID__headerBackground"
+        >
+          <h3>{checkSide(dataID?.biography.alignment)}</h3>
+          <h3>#{dataID?.id}</h3>
+        </div>
+      );
+    } else {
+      return (
+        <div
+          style={{
+            backgroundImage: "url(https://wallpapercave.com/wp/wp2654364.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="resultID__headerBackground"
+        >
+          <h3>{checkSide(dataID?.biography.alignment)}</h3>
+          <h3>#{dataID?.id}</h3>
+        </div>
+      );
+    }
+  };
 
   return (
     <div className="resultID">
       <div className="resultID__header">
-        {dataID?.biography.publisher == "DC Comics" ? (
-          <div
-            style={{
-              backgroundImage:
-                "url(https://picstatio.com/large/xj5hox/dc-comics-logo.jpg)",
-              backgroundSize: "cover", backgroundPosition: "center"
-            }}
-            className="resultID__headerBackground"
-          >
-            <h3>{dataID?.biography.alignment}</h3>
-            <h3>#{dataID?.id}</h3>
-          </div>
-        ) : (
-          <div
-            style={{
-              backgroundImage:
-                "url(https://www.bcslogic.com/wp-content/uploads/2019/05/5.8.19.wild_.esther.feature2-1120x450.png)",
-              backgroundSize: "cover", backgroundPosition: "center"
-            }}
-            className="resultID__headerBackground"
-          >
 
-{/* {if (dataID?.biography.alignment === "good") {
-  return  <h3>👼</h3>
-} else {
-  return  <h3>😈</h3>
-}} */}
-          {/* {dataID?.biography.alignment === "good" ? <h3>👼</h3> : <h3>🤷🏻‍♂️😈{dataID?.biography.alignment}</h3> } */}
-            
-
-          <h3>
-            {checkSide(dataID?.biography.alignment)}
-          </h3>
-            <h3>#{dataID?.id}</h3>
-          </div>
-        )}
-
+        {checkUnivers(dataID?.biography.publisher)}
+       
         <div className="resultID__headerProfile">
           <img src={dataID?.image.url} alt="" />
         </div>
@@ -90,12 +110,6 @@ function ResultID() {
           <h3>({dataID?.biography["full-name"]})</h3>
         </div>
       </div>
-
-      {/* {Object.keys(dataID?.appearance).map((keyName, i) => (
-    <li className="travelcompany-input" key={i}>
-        <span className="input-label">key: {i} Name: {dataID?.appearance[keyName]}</span>
-    </li>
-))} */}
 
       <div className="resultID__appearance">
         <h2>Appearance</h2>
@@ -141,39 +155,10 @@ function ResultID() {
         </div>
         <div className="resultID__powerStats">
           <h2>Powerstats</h2>
-
           <RadarComponent />
-          {/* <h3>{dataID?.powerstats.combat}</h3>
-          <h3>{dataID?.powerstats.durability}</h3>
-          <h3>{dataID?.powerstats.intelligence}</h3>
-          <h3>{dataID?.powerstats.power}</h3>
-          <h3>{dataID?.powerstats.speed}</h3>
-          <h3>{dataID?.powerstats.strength}</h3>
-          <h3>{dataID?.biography.publisher}</h3> */}
+
         </div>
       </div>
-
-      {/* <h2>Appearance</h2>
-      <h3>{dataID?.appearance["eye-color"]}</h3>
-      <h3>{dataID?.appearance.gender}</h3>
-      <h3>{dataID?.appearance["hair-color"]}</h3>
-      <h3>{dataID?.appearance.race}</h3>
-      <h3>{dataID?.appearance.height[1]}</h3>
-      <h3>{dataID?.appearance.weight[1]}</h3> */}
-
-      {/* <h2>Biography</h2>
-      <h3>{dataID?.biography["alter-egos"]}</h3>
-      <h3>{dataID?.biography["first-appearance"]}</h3>
-      <h3>{dataID?.biography["place-of-birth"]}</h3>
-      <h3>{dataID?.biography.publisher}</h3>
-
-      <h2>Connection</h2>
-      <h3>{dataID?.connections["group-affiliation"]}</h3>
-      <h3>{dataID?.connections.relatives}</h3>
-
-      <h2>Work</h2>
-      <h3>{dataID?.work.base}</h3>
-      <h3>{dataID?.work.occupation}</h3>  */}
     </div>
   );
 }
