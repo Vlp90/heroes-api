@@ -3,8 +3,8 @@ import "./ResultID.css";
 import { useStateValue } from "./StateProvider";
 import useID from "./useID";
 import { Container, Grid } from "@material-ui/core";
-import RadarComponent from './components/Radar'
-
+// import RadarComponent from './components/Radar'
+import { Radar } from 'react-chartjs-2';
 
 // ICONS
 import FaceIcon from "@material-ui/icons/Face";
@@ -22,10 +22,32 @@ function ResultID() {
   // console.log('ID FINAL PLZZZZZZZZZ', id)
 
   // const { dataID } = useID(id);
-  const { dataID } = useID(623);
+  const { dataID } = useID(18);
+
+  
+const radarData = {
+  labels: ['Combat', 'Durability', 'Intelligence', 'Power', 'Speed', 'Strength'],
+  datasets: [
+    {
+      label: '',
+      backgroundColor: 'rgba(255, 0, 0, 0.2)',
+      borderColor: 'rgba(255, 0, 0, 1)',
+      pointBorderColor: 'rgba(255, 0, 0, 1)',
+      pointBackgrounColor: 'rgba(255, 0, 0, 1)',
+      pointRadius: 1,
+      data: [dataID?.powerstats.combat, dataID?.powerstats.durability, dataID?.powerstats.intelligence, dataID?.powerstats.power, dataID?.powerstats.speed, dataID?.powerstats.strength]
+    }
+  ]
+}
+
+
+
+  console.log(radarData.datasets)
 
   //   if (dataID?.biography.publisher ==="") {
   // }
+
+
   return (
     <div className="resultID">
       <div className="resultID__header">
@@ -115,7 +137,7 @@ function ResultID() {
         <div className="resultID__powerStats">
           <h2>Powerstats</h2>
 
-          <RadarComponent />
+          <Radar data={radarData}/>
           <h3>{dataID?.powerstats.combat}</h3>
           <h3>{dataID?.powerstats.durability}</h3>
           <h3>{dataID?.powerstats.intelligence}</h3>
