@@ -3,7 +3,7 @@ import "./ResultID.css";
 import { useStateValue } from "./StateProvider";
 import useID from "./useID";
 import { Container, Grid } from "@material-ui/core";
-import { Doughnut } from 'react-chartjs-2';
+import RadarComponent from './components/Radar'
 
 
 // ICONS
@@ -115,7 +115,7 @@ function ResultID() {
         <div className="resultID__powerStats">
           <h2>Powerstats</h2>
 
-          <Doughnut />
+          <RadarComponent />
           <h3>{dataID?.powerstats.combat}</h3>
           <h3>{dataID?.powerstats.durability}</h3>
           <h3>{dataID?.powerstats.intelligence}</h3>
