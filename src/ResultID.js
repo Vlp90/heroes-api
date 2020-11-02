@@ -5,6 +5,7 @@ import useID from "./useID";
 import { Container, Grid } from "@material-ui/core";
 // import RadarComponent from './components/Radar'
 import { Radar } from 'react-chartjs-2';
+import RadarComponent from './components/RadarComponent'
 
 // ICONS
 import FaceIcon from "@material-ui/icons/Face";
@@ -22,30 +23,23 @@ function ResultID() {
   // console.log('ID FINAL PLZZZZZZZZZ', id)
 
   // const { dataID } = useID(id);
-  const { dataID } = useID(18);
+  const { dataID } = useID(10);
 
-  
-const radarData = {
-  labels: ['Combat', 'Durability', 'Intelligence', 'Power', 'Speed', 'Strength'],
-  datasets: [
-    {
-      label: '',
-      backgroundColor: 'rgba(255, 0, 0, 0.2)',
-      borderColor: 'rgba(255, 0, 0, 1)',
-      pointBorderColor: 'rgba(255, 0, 0, 1)',
-      pointBackgrounColor: 'rgba(255, 0, 0, 1)',
-      pointRadius: 1,
-      data: [dataID?.powerstats.combat, dataID?.powerstats.durability, dataID?.powerstats.intelligence, dataID?.powerstats.power, dataID?.powerstats.speed, dataID?.powerstats.strength]
-    }
-  ]
-}
-
-
-
-  console.log(radarData.datasets)
-
-  //   if (dataID?.biography.publisher ==="") {
+  // const checkSide = dataID?.biography.alignment
+  // console.log(checkSide)
+  // if (checkSide === "good") {
+  //   return <h3>GOOOOD</h3>
   // }
+
+  function checkSide(side) {
+    if (side === "good") {
+      return '👼';
+    } else if (side === "bad"){
+      return '😈';
+    } else {
+      return '🤷🏻‍♂️';
+    }
+  }
 
 
   return (
@@ -72,7 +66,18 @@ const radarData = {
             }}
             className="resultID__headerBackground"
           >
-            <h3>{dataID?.biography.alignment}</h3>
+
+{/* {if (dataID?.biography.alignment === "good") {
+  return  <h3>👼</h3>
+} else {
+  return  <h3>😈</h3>
+}} */}
+          {/* {dataID?.biography.alignment === "good" ? <h3>👼</h3> : <h3>🤷🏻‍♂️😈{dataID?.biography.alignment}</h3> } */}
+            
+
+          <h3>
+            {checkSide(dataID?.biography.alignment)}
+          </h3>
             <h3>#{dataID?.id}</h3>
           </div>
         )}
@@ -137,14 +142,14 @@ const radarData = {
         <div className="resultID__powerStats">
           <h2>Powerstats</h2>
 
-          <Radar data={radarData}/>
-          <h3>{dataID?.powerstats.combat}</h3>
+          <RadarComponent />
+          {/* <h3>{dataID?.powerstats.combat}</h3>
           <h3>{dataID?.powerstats.durability}</h3>
           <h3>{dataID?.powerstats.intelligence}</h3>
           <h3>{dataID?.powerstats.power}</h3>
           <h3>{dataID?.powerstats.speed}</h3>
           <h3>{dataID?.powerstats.strength}</h3>
-          <h3>{dataID?.biography.publisher}</h3>
+          <h3>{dataID?.biography.publisher}</h3> */}
         </div>
       </div>
 

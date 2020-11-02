@@ -1,7 +1,15 @@
 import React from 'react'
 import { Radar } from 'react-chartjs-2';
+import { useStateValue } from "../StateProvider";
+import useID from "../useID";
 
-const radarData = {
+
+
+function RadarComponent() {
+  const [{ term, id }, dispatch] = useStateValue();
+  const { dataID } = useID(10);
+
+  const radarData = {
     labels: ['Combat', 'Durability', 'Intelligence', 'Power', 'Speed', 'Strength'],
     datasets: [
       {
@@ -11,11 +19,12 @@ const radarData = {
         pointBorderColor: 'rgba(255, 0, 0, 1)',
         pointBackgrounColor: 'rgba(255, 0, 0, 1)',
         pointRadius: 1,
-        data: [10, 84, 78, 109, 85, 100]
+        data: [dataID?.powerstats.combat, dataID?.powerstats.durability, dataID?.powerstats.intelligence, dataID?.powerstats.power, dataID?.powerstats.speed, dataID?.powerstats.strength]
       }
     ]
   }
-function RadarComponent() {
+
+
     return (
         <div>
             <Radar data={radarData} />

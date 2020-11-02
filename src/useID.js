@@ -8,9 +8,6 @@ function useID (id) {
   const [dataID, setdataID] = useState(null);
     // console.log("ID USEID", id)
     
-
-
-
     useEffect(() => {
         const fetchData = async () => {
           fetch(

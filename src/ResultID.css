@@ -1,13 +1,13 @@
 .resultID {
   max-width: 1200px;
   margin: 0 auto;
-    box-shadow: 0 0.747159px 1.4113px rgba(135, 165, 217, 0.0224916),
+  box-shadow: 0 0.747159px 1.4113px rgba(135, 165, 217, 0.0224916),
     0 1.79553px 3.39155px rgba(135, 165, 217, 0.0323114),
     0 3.38082px 6.38599px rgba(135, 165, 217, 0.04),
     0 6.0308px 11.3915px rgba(135, 165, 217, 0.0476886),
     0 11.28px 21.3066px rgba(135, 165, 217, 0.0575083);
-    border-radius: 10px;
-
+  border-radius: 10px;
+  margin-bottom: 50px;
 }
 
 .resultID__headerName {
@@ -38,7 +38,7 @@
 }
 
 .resultID__headerBackground h3 {
-padding: 20px;
+  padding: 20px;
 }
 
 .resultID__headerProfile {
@@ -60,37 +60,37 @@ padding: 20px;
 }
 
 .resultID__appearance {
-    margin-top: 20px;
+  margin-top: 20px;
   padding: 20px;
   /* box-shadow: 0 0.747159px 1.4113px rgba(135, 165, 217, 0.0224916),
     0 1.79553px 3.39155px rgba(135, 165, 217, 0.0323114),
     0 3.38082px 6.38599px rgba(135, 165, 217, 0.04),
     0 6.0308px 11.3915px rgba(135, 165, 217, 0.0476886),
     0 11.28px 21.3066px rgba(135, 165, 217, 0.0575083); */
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
-.resultID__appearance h2:first-child {
-    text-align: center;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+.resultID__appearance h2:first-child,
+.resultID__powerStats > h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .resultID__powerStats {
-    margin-top: 50px;
+  margin: 50px 0;
 }
 
 .resultID__appearanceInfo div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .resultID__appearanceInfo div svg {
-    color: lightslategray;
+  color: lightslategray;
 }
 
 .resultID__appearanceInfo div h3 {
-    padding-left: 10px;
+  padding-left: 10px;
 }
