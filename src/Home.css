@@ -14,3 +14,16 @@
     align-items: center;
     padding-top: 45vh;
   }
+
+  .home__searchRandom {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  /* #32e3d9 */
+  .home__searchRandom > button {
+    background-color: rgb(133, 27, 219);
+    color: white;
+    padding: 10px 20px;
+  }

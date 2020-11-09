@@ -14,7 +14,6 @@
     width:80vw ;
     max-width: 560px;
     margin: 0 auto;
-    /* margin-top: 40px; */
     justify-content: space-between;
     background-color: white;
 }
@@ -29,6 +28,11 @@
 
 .search__input > input:focus {
     outline: 0;
+}
+
+.search__input button {
+    background-color: rgb(133, 27, 219);
+    color: white;
 }
 
 .search__inputIcon {
@@ -62,3 +66,4 @@
 .search__buttonsHidden {
     display: none;
 }
+
