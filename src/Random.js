@@ -149,7 +149,7 @@ const checkSide = (side) => {
           </div>
           <div className="resultID__powerStats">
             <h2>Powerstats</h2>
-            {/* <RadarComponent /> */}
+            <RadarComponent />
   
           </div>
         </div>
