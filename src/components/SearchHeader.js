@@ -78,10 +78,10 @@ function SearchHeader() {
           </Button>
         </div>
         <div className="searchHeader__random">
-          <h1>or</h1>
+          {/* <h1>or</h1> */}
 
           <Button type="submit" onSubmit={searchRandom} onClick={searchRandom}>
-            Random
+            Get Random
           </Button>
         </div>
       </form>
