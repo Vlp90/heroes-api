@@ -4,7 +4,7 @@
 
 .searchHeader__home {
     color: rgb(82, 95, 107);
-    padding-right: 10px ;
+    padding-right: 40px ;
 }
 
 
@@ -16,7 +16,7 @@
 .searchHeader__input {
     display: flex;
     align-items: center;
-    /* border: 1px solid lightgray; */
+    border: 1px solid lightgray;
     height: 30px;
     padding: 5px 0 5px 20px;
     border-radius: 999px ;
@@ -47,6 +47,10 @@
     color: white;
 
 }
+
+/* .searchHeader__input > input:hover {
+    background-color: lightgray
+} */
 
 .searchHeader__random {
     display: flex;
