@@ -30,6 +30,9 @@ function SearchHeader() {
   };
 
   const searchRandom = (e) => {
+
+    e.preventDefault();
+
     const randomInteger = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     };
@@ -39,7 +42,7 @@ function SearchHeader() {
 
     dispatch({
       type: actionTypes.SET_FIND_RANDOM_ID,
-      id: randomInteger(1, 700),
+      id: randomInteger(1, 700) ,
     });
   };
 
