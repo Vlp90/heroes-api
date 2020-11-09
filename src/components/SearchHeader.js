@@ -38,7 +38,7 @@ function SearchHeader() {
     };
 
     console.log(randomInteger(1, 700))
-    // history.push("/random-id");
+    history.push("/random-id");
 
     dispatch({
       type: actionTypes.SET_FIND_RANDOM_ID,

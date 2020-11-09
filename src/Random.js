@@ -23,21 +23,9 @@ function Random() {
     const [{ id }, dispatch] = useStateValue("");
     console.log("ID RANDOM", id)
 
-  // const [heroes, setHeroes] = useState();
-  // const id = 70
+  const { dataID } = useID(id);
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const request = await axios.get(`https://www.superheroapi.com/api.php/${API_TOKEN}/${id}`);
-  //       console.log("RANDOM ID", request.data.results);
-  //       setHeroes(request.data.results);
-  //     return request;
-  //   }
-  //   fetchData();
-  // }, []);
-
-// console.log(heroes)
-  // const { dataID } = useID(10);
+  console.log(dataID)
 
 
 
@@ -64,8 +52,8 @@ const checkSide = (side) => {
           }}
           className="resultID__headerBackground"
         >
-          {/* <h3>{checkSide(dataID?.biography.alignment)}</h3>
-          <h3>#{dataID?.id}</h3> */}
+          <h3>{checkSide(dataID?.biography.alignment)}</h3>
+          <h3>#{dataID?.id}</h3>
         </div>
       );
     } else if (univers === "Marvel Comics") {
@@ -80,8 +68,8 @@ const checkSide = (side) => {
           }}
           className="resultID__headerBackground"
         >
-          {/* <h3>{checkSide(dataID?.biography.alignment)}</h3>
-          <h3>#{dataID?.id}</h3> */}
+          <h3>{checkSide(dataID?.biography.alignment)}</h3>
+          <h3>#{dataID?.id}</h3>
         </div>
       );
     } else {
@@ -94,8 +82,8 @@ const checkSide = (side) => {
           }}
           className="resultID__headerBackground"
         >
-          {/* <h3>{checkSide(dataID?.biography.alignment)}</h3>
-          <h3>#{dataID?.id}</h3> */}
+          <h3>{checkSide(dataID?.biography.alignment)}</h3>
+          <h3>#{dataID?.id}</h3>
         </div>
       );
     }
@@ -106,14 +94,14 @@ const checkSide = (side) => {
         <div className="resultID">
         <div className="resultID__header">
   
-          {/* {checkUnivers(dataID?.biography.publisher)} */}
+          {checkUnivers(dataID?.biography.publisher)}
          
           <div className="resultID__headerProfile">
-            {/* <img src={dataID?.image.url} alt="" /> */}
+            <img src={dataID?.image.url} alt="" />
           </div>
           <div className="resultID__headerName">
-            {/* <h1>{dataID?.name}</h1>
-            <h3>({dataID?.biography["full-name"]})</h3> */}
+            <h1>{dataID?.name}</h1>
+            <h3>({dataID?.biography["full-name"]})</h3>
           </div>
         </div>
   
@@ -124,37 +112,37 @@ const checkSide = (side) => {
               <Grid item xs={6} sm={4}>
                 <div>
                   <PublicIcon />
-                  {/* <h3> {dataID?.appearance.race}</h3>{" "} */}
+                  <h3> {dataID?.appearance.race}</h3>{" "}
                 </div>
               </Grid>
               <Grid item xs={6} sm={4}>
                 <div>
                   <AccessibilityIcon />
-                  {/* <h3>{dataID?.appearance.height[1]}</h3> */}
+                  <h3>{dataID?.appearance.height[1]}</h3>
                 </div>
               </Grid>
               <Grid item xs={6} sm={4}>
                 <div>
                   <FitnessCenterIcon />
-                  {/* <h3>{dataID?.appearance.weight[1]}</h3> */}
+                  <h3>{dataID?.appearance.weight[1]}</h3>
                 </div>
               </Grid>
               <Grid item xs={6} sm={4}>
                 <div>
                   <WcIcon />
-                  {/* <h3>{dataID?.appearance.gender}</h3> */}
+                  <h3>{dataID?.appearance.gender}</h3>
                 </div>
               </Grid>
               <Grid item xs={6} sm={4}>
                 <div>
                   <VisibilityIcon />
-                  {/* <h3>{dataID?.appearance["eye-color"]}</h3> */}
+                  <h3>{dataID?.appearance["eye-color"]}</h3>
                 </div>
               </Grid>
               <Grid item xs={6} sm={4}>
                 <div>
                   <FaceIcon />
-                  {/* <h3>{dataID?.appearance["hair-color"]}</h3> */}
+                  <h3>{dataID?.appearance["hair-color"]}</h3>
                 </div>
               </Grid>
             </Grid>

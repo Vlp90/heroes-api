@@ -31,7 +31,7 @@ export const initialState = {
             };
   
             case actionTypes.SET_FIND_RANDOM_ID:
-              console.log("ACTION RANOM", action.id)
+              console.log("ACTION RANDOM", action.id)
 
               // const randomInteger = (min, max) => {
               //   return Math.floor(Math.random() * (max - min + 1)) + min;
