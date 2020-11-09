@@ -14,8 +14,8 @@ function RadarComponent() {
     datasets: [
       {
         label: 'Powerstats',
-        backgroundColor: 'rgba(255, 0, 0, 0.2)',
-        borderColor: 'rgba(255, 0, 0, 1)',
+        backgroundColor: 'rgb(133, 27, 219, 0.2)',
+        borderColor: 'rgb(133, 27, 219)',
         pointBorderColor: 'rgba(255, 0, 0, 1)',
         pointBackgrounColor: 'rgba(255, 0, 0, 1)',
         pointRadius: 1,
